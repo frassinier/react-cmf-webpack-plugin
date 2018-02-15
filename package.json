@@ -1,0 +1,17 @@
+{
+  "name": "react-cmf-webpack-plugin",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Fabien Rassinier <frassinier@talend.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "prepublish": "babel -d dist index.js"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "deepmerge": "^2.0.1"
+  }
+}
