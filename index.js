@@ -1,15 +1,14 @@
 const fs = require('fs');
 const pathLib = require('path');
-const mkdirp = require('mkdirp'); // eslint-disable-line import/no-extraneous-dependencies
-const deepmerge = require('deepmerge'); // eslint-disable-line import/no-extraneous-dependencies
+const mkdirp = require('mkdirp');
+const deepmerge = require('deepmerge');
 
 /**
- *
- * @param options
+ * React CMF Webpack Plugin
+ * @param options plugin options
  * @constructor
  */
 function ReactCMFWebpackPlugin(options) {
-	console.error(options);
 	this.options = options;
 }
 
@@ -73,15 +72,13 @@ ReactCMFWebpackPlugin.prototype.apply = function (compiler) {
 		function log() {
 			return somethingToLog => {
 				if (!quiet) {
-					console.log(somethingToLog);
+					console.error(somethingToLog);
 				}
 			};
 		}
 
 		const cmfconfig = (() => {
 			try {
-				log(process.cwd());
-				console.error(pathLib.join(process.cwd(), 'cmf.json'));
 				return require(pathLib.join(process.cwd(), 'cmf.json')); // eslint-disable-line
 			} catch (e) {
 				console.error('cmf.json file is required to run this script');
